@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 205 56% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 205 56% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 205 56% 11%;
+
+    --primary: 180 82% 30%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 180 50% 94%;
+
+    --secondary: 205 30% 96%;
+    --secondary-foreground: 205 56% 11%;
+
+    --muted: 210 30% 95%;
+    --muted-foreground: 205 15% 40%;
+
+    --accent: 36 100% 64%;
+    --accent-foreground: 205 56% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 205 25% 90%;
+    --input: 205 25% 90%;
+    --ring: 180 82% 30%;
+
+    --radius: 0.875rem;
+
+    --shadow-card: 0 6px 24px -8px hsl(205 40% 30% / 0.12);
+    --shadow-soft: 0 2px 12px -4px hsl(205 40% 30% / 0.08);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Manrope', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.pulse-ring { animation: pulse-ring 2.2s cubic-bezier(0.2, 0.7, 0.3, 1) infinite; transform-origin: center; }
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+.draw-path { stroke-dasharray: 240; stroke-dashoffset: 240; animation: draw 2.4s ease forwards; }
+.draw-path-2 { stroke-dasharray: 240; stroke-dashoffset: 240; animation: draw 2.4s ease 0.5s forwards; }
+.draw-path-3 { stroke-dasharray: 240; stroke-dashoffset: 240; animation: draw 2.4s ease 1s forwards; }
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.float-soft { animation: float-soft 4s ease-in-out infinite; }
