@@ -1,2 +1,3 @@
-# webstudio-lege-artis-clinic-6d96fa8e
-Web Studio landing for Lege Artis Clinic
+# Welcome to your Lovable project
+
+TODO: Document your project here
